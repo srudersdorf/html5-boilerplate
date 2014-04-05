@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js"lang="de-de">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,29 +11,41 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
+
+        <!-- Modernizr script *needs* to run *before* the browser begins rendering the page --> 
         <script src="js/vendor/modernizr-2.7.1.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 8]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+            <p class="browsehappy">Sie nutzen einen veralteten Browser. Bitte <a href="http://browsehappy.com/">aktualisieren Sie Ihren Browser</a> für ein besseres Web.</p>
         <![endif]-->
 
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+        <header>
+            <nav role="navigation"></nav>
+        </header>
+        <main id="main" role="main">
+            
+        </main>
+        
+        <footer></footer>
 
+        
+        <!--
+        Google CDN version is chosen because it's fast and it has the best overall
+        penetration which increases the odds of having a copy of the library in your user's browser cache.
+        -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <!-- Custom Scripts -->
+        <script src="js/build/production.js"></script>
         <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
+            AccessifyHTML5({
+                // http://www.w3.org/TR/wai-aria/roles#role_definitions
+                header:"body>header",
+                footer:"body>footer",
+                main: "#main" 
+            });
         </script>
     </body>
 </html>

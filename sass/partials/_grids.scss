@@ -1,0 +1,22 @@
+// Susy
+// ============
+
+@import "susy";
+
+
+// Definition of Susy Grid system
+// ============
+
+$susy: (
+	columns: 12,
+	gutter: .25,
+	container: 80em,
+
+
+	debug: (
+		image: show,
+		color: rgba(255,0,0,.1),
+		//output: overlay,
+		//toggle: top right,
+	)
+);

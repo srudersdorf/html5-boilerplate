@@ -3,11 +3,11 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Stefan Rudersdorf -- UI/UX -- @srudersdorf
 
 # THANKS
 
-    <name>
+    
 
 # TECHNOLOGY COLOPHON
 
