@@ -4,55 +4,6 @@ module.exports = function(grunt) {
 
     pkg: grunt.file.readJSON('package.json'),
 
-    modernizr: {
-
-    // [REQUIRED] Path to the build you're using for development.
-    "devFile" : "js/modernizr-dev.js",
-
-    // [REQUIRED] Path to save out the built file.
-    "outputFile" : "js/modernizr-custom.js",
-
-    // Based on default settings on http://modernizr.com/download/
-    "extra" : {
-        "shiv" : true,
-        "printshiv" : false,
-        "load" : true,
-        "mq" : false,
-        "cssclasses" : true
-    },
-
-    // Based on default settings on http://modernizr.com/download/
-    "extensibility" : {
-        "addtest" : false,
-        "prefixed" : false,
-        "teststyles" : false,
-        "testprops" : false,
-        "testallprops" : false,
-        "hasevents" : false,
-        "prefixes" : false,
-        "domprefixes" : false
-    },
-
-    // By default, source is uglified before saving
-    "uglify" : true,
-
-    // Define any tests you want to implicitly include.
-    "tests" : [],
-
-    // By default, this task will crawl your project for references to Modernizr tests.
-    // Set to false to disable.
-    "parseFiles" : true,
-
-    // When parseFiles = true, this task will crawl all *.js, *.css, *.scss files, except files that are in node_modules/.
-    // You can override this by defining a "files" array below.
-    // "files" : [],
-
-    // When parseFiles = true, matchCommunityTests = true will attempt to
-    // match user-contributed tests.
-    "matchCommunityTests" : false
-
-    },
-
     //autoprefixer: {
     //  options: {
     //    browsers: ['last 2 version']
@@ -65,24 +16,11 @@ module.exports = function(grunt) {
     //  }
     //},
 
-    //jquery: {
-    //  // the parts you want to exclude from your build
-    //  // possible values ['ajax', 'css', 'deprecated', 'dimensions', 'effects', 'offset']
-    //  exclude: ['ajax', 'deprecated', 'dimensions', 'offset'],
-    //  // the jQuery version (currently only 1.8.3 is supported) - defaults to 1.8.3
-    //  version: '1.8.3',
-    //  // output location (relative to your grunt.js file location)
-    //  dest: 'bower_components/jquery/dist/test.js',
-    //  // minify the output (true or false) - defaults to false
-    //  minify: false
-    //},
-
     concat: {
       dist: {
         src: [
-           // jQuery is loaded from Google CDN
-          'js/main.js',
-          'js/plugins.js'
+          'js/plugins.js',
+          'js/main.js'
         ],
         dest: 'js/build/scripts.js'
       }
@@ -102,6 +40,21 @@ module.exports = function(grunt) {
         }
       }
     },
+
+
+	// UNCSS läuft, produziert aber Fehler.
+	// z.B. werden Bootstrap Tooltips als nicht verwendet erkannt, was falsch ist.
+    //uncss: {
+	//  dist: {
+	//    src: ['_site/index.html'],
+	//    dest: 'css/tidy.css',
+	//    options: {
+	//      report: 'min', // optional: include to report savings
+	//      ignoreSheets: ['bower_components/bootstrap-sass/vendor/assets/stylesheets/bootstrap/_tooltip.scss']
+	//    }
+	//  }
+	//},
+
     imagemin: {
 		//options: {                       // Target options
 	    //  cache: false
@@ -145,13 +98,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-compass');
-  grunt.loadNpmTasks("grunt-modernizr");
   //grunt.loadNpmTasks('grunt-uncss');
 
   require('load-grunt-tasks')(grunt);
 
   // Default Task is basically a rebuild
   //grunt.registerTask('default', ['exec:serve']);
-  grunt.registerTask('default', ['concat', 'uglify',  'watch']);
+  grunt.registerTask('default', ['concat', 'uglify', 'watch']);
 };
 

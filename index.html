@@ -9,9 +9,8 @@
 
         <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
 
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
-
+        <link rel="stylesheet" href="css/screen.css">
+        
         <!-- Modernizr script *needs* to run *before* the browser begins rendering the page --> 
         <script src="js/vendor/modernizr-2.7.1.min.js"></script>
     </head>
@@ -25,6 +24,13 @@
         </header>
         <main id="main" role="main">
             
+            <!-- Grid Test -->
+            <div class="test-grid">
+                <div></div>
+            </div>
+
+
+
         </main>
         
         <footer></footer>
@@ -35,10 +41,10 @@
         penetration which increases the odds of having a copy of the library in your user's browser cache.
         -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+        <script>window.jQuery || document.write('<script src="js/vendor-fallback/jquery-1.11.0.min.js"><\/script>')</script>
 
         <!-- Custom Scripts -->
-        <script src="js/build/production.js"></script>
+        <script src="js/build/scripts.js"></script>
         <script>
             AccessifyHTML5({
                 // http://www.w3.org/TR/wai-aria/roles#role_definitions

@@ -1,10 +1,11 @@
 // Partials
 // ============
 
+@import "partials/normalize";
 @import "partials/variables";
 @import "partials/grids"; // Susy
 @import "partials/typo";
-
+@import "partials/main";
 
 
 // Compass
@@ -12,7 +13,16 @@
 
 @import "compass/css3";
 @import "compass/utilities";
-@import "compass/layout/grid-background";
 
 
 
+.test-grid{
+  @include container;
+  div{
+    @include span(4);
+    background-color: red;
+    &:after{
+      content: '4 Spalten'
+    }
+  }
+}
